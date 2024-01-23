@@ -14,3 +14,4 @@ workbook.VbaProject.Sign(digitalSignature);
 var stream = new MemoryStream();
 workbook.Save(stream, SaveFormat.Xlsm);
 MyStream.Main(stream.ToArray());
+Console.WriteLine($"Is file properly signed: {workbook.VbaProject.IsValidSigned}");
