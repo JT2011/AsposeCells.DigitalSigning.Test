@@ -44,7 +44,7 @@ namespace AsposeCells.DigitalSigning.Test
 
     public class MyStream
     {
-        private const string FileName = "Test.xlsm";
+        private const string FileName = @"Contents\Digitally-Signed-Workbook.xlsm";
 
         public static void Main(byte[] content)
         {
@@ -54,6 +54,7 @@ namespace AsposeCells.DigitalSigning.Test
                 return;
             }
 
+            //writes to <root>\AsposeCells-DigitalSigning\AsposeCells.DigitalSigning.Test\bin\Debug\net8.0\Contents
             using (var fs = new FileStream(FileName, FileMode.CreateNew))
             {
                 fs.Write(content, 0, content.Length);
