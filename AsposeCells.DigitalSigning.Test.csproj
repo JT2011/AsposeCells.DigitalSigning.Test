@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <None Remove="Contents\Book1.xlsm" />
-    <None Remove="Contents\friendly-cert.pfx" />
+    <None Remove="Contents\dev-workbook.hcrcentral.com.pfx" />
     <None Remove="Contents\friendly-cert2.pfx" />
   </ItemGroup>
 
@@ -17,10 +17,10 @@
     <Content Include="Contents\Book1.xlsm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Contents\friendly-cert.pfx">
+    <Content Include="Contents\certs\dev-workbook.hcrcentral.com.pfx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Contents\friendly-cert2.pfx">
+    <Content Include="Contents\certs\friendly-cert2.pfx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

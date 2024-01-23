@@ -26,13 +26,18 @@ namespace AsposeCells.DigitalSigning.Test
         {
             const string comment = "Signing Digital Signature using Aspose.Cells";
 
-            const string pfxPath = @"Contents\friendly-cert2.pfx";
+            const string devWorkbookHcrcentralComPfxPath = @"Contents\certs\dev-workbook.hcrcentral.com.pfx";
+            const string friendlyCert2PfxPath = @"Contents\certs\friendly-cert2.pfx";
 
-            var cert = new X509Certificate2(pfxPath, "mypassword", X509KeyStorageFlags.MachineKeySet);
+            var devX509Certificate2 = new X509Certificate2(devWorkbookHcrcentralComPfxPath, string.Empty, X509KeyStorageFlags.MachineKeySet);
+            var friendlyX509Certificate2 = new X509Certificate2(friendlyCert2PfxPath, "mypassword", X509KeyStorageFlags.MachineKeySet);
 
             var digitalSignature =
                 new DigitalSignature
-                    (cert, comment, DateTime.UtcNow);
+                    (devX509Certificate2, comment, DateTime.UtcNow);
+            //var digitalSignature =
+            //    new DigitalSignature
+            //        (friendlyX509Certificate2, comment, DateTime.UtcNow);
             return digitalSignature;
         }
     }
