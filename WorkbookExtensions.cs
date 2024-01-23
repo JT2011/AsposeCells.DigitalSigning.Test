@@ -13,7 +13,7 @@ namespace AsposeCells.DigitalSigning.Test
                 MemorySetting = MemorySetting.MemoryPreference
             };
 
-            const string path = @"Contents\Book1.xlsm";
+            const string path = @"Contents\workbooks\test-macros-file.xlsm";
 
             var readText = File.ReadAllBytes(path);
             var stream = new MemoryStream(readText);
