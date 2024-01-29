@@ -30,11 +30,14 @@ namespace AsposeCells.DigitalSigning.Test
             const string friendlyCert2PfxPath = @"Contents\certs\friendly-cert2.pfx";
 
             var devX509Certificate2 = new X509Certificate2(devWorkbookHcrcentralComPfxPath, string.Empty, X509KeyStorageFlags.MachineKeySet);
+            var devX509Certificatev3 = new X509Certificate(devWorkbookHcrcentralComPfxPath, string.Empty, X509KeyStorageFlags.MachineKeySet);
             var friendlyX509Certificate2 = new X509Certificate2(friendlyCert2PfxPath, "mypassword", X509KeyStorageFlags.MachineKeySet);
+
+            var vertBytes = devX509Certificatev3.GetRawCertData();
 
             var digitalSignature =
                 new DigitalSignature
-                    (devX509Certificate2, comment, DateTime.UtcNow);
+                    (vertBytes, string.Empty, comment, DateTime.UtcNow);
             //var digitalSignature =
             //    new DigitalSignature
             //        (friendlyX509Certificate2, comment, DateTime.UtcNow);
