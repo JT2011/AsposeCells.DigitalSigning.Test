@@ -5,7 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 namespace AsposeCells.DigitalSigning.Test
 {
     public class WorkbookExtensions
-    {
+    { 
         public static Workbook CreateWorkbook()
         {
             var loadOptions = new LoadOptions(LoadFormat.Auto)
